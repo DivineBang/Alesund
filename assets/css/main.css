@@ -31,7 +31,7 @@ ul,li{
     margin: 0; 
 }
 .container{
-    width: 1290px;
+    width: 1390px;
     margin: 0 auto ; 
 }
 #preloader {
@@ -56,12 +56,12 @@ ul,li{
 .logo{
     margin-right: auto;
 }
-.list_phone{
+.list__phone{
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.list_address{
+.list__address{
     margin-left: 145px;
     display: flex;
     flex-direction: column;
@@ -73,6 +73,9 @@ ul,li{
 }
 .list__item_second{
     color: #fff;
+}
+.menu{
+    display: none;
 }
 .header-menu{
     display: none;
@@ -86,6 +89,7 @@ ul,li{
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    height: 840px;
     z-index: -2;
 }
 #fullscreen-video {
@@ -273,3 +277,215 @@ input[type="file"] {
     display: none;
 }
 /* popup end*/
+
+.who{
+    padding: 30px 0;
+}
+.who__set{
+    display: flex;
+    align-items: center;
+}
+.title{
+    margin-right: auto;
+    color:  #04003F;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.btn_first{
+    color: #00B4A4;
+    border: 1px solid #00B4A4;
+    line-height: 160%; /* 25.6px */
+    padding: 10px 15px;
+    width: 240px;
+    text-align: center;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+.btn_first:hover{
+    color: #fff;
+    border: 1px solid #00B4A4;
+    background: #00B4A4;
+    
+}
+.btn_second{
+    color: #fff;
+    border: 1px solid #00B4A4;
+    background: #00B4A4;
+    line-height: 160%; /* 25.6px */
+    padding: 10px 15px;
+    width: 240px;
+    text-align: center;
+    border-radius: 5px;
+}
+.btn_second:hover{
+    background: #0c998d;
+    
+}
+.who_mix{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 300px;
+   
+}
+.who_mix_left{
+    display: flex;
+    align-items: center;
+    margin-top: -250px;
+    gap: 15px;
+    width: 547px;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.who_mix_right{
+    width: 600px;
+    color:  #464646;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; 
+    padding-top: 80px;
+}
+.who_mix_left::before{
+    content: "";
+    display: block;
+    width: 55px;
+    height: 120px; 
+    background-image: url('../img/vector-1.svg'); /* Встановіть шлях до вашого зображення */
+    background-size: cover;
+}
+.who_kit{
+    padding-top: 110px;
+}
+.who_kit{
+    display: flex;
+    justify-content: space-between;
+}
+.who_kit_left{
+    width: 796px;
+    height: 351px;
+}
+.who_kit_right{
+    display: flex;
+    align-items: center;
+    width: 355px;
+    
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: auto;
+}
+.who_kit_right:after{
+    content: "";
+    display: block;
+    width: 62px;
+    height: 120px; 
+    background-image: url('../img/vector-2.svg'); /* Встановіть шлях до вашого зображення */
+    background-size: cover;
+}
+.choice{
+    padding: 150px 0;
+}
+.cart__set{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+.cart{
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cart__img{
+    width: 450px;
+    height: 530px;
+}
+.cart__title{
+    color:  #04003F;
+    font-size: 20px;
+    font-weight: 500;
+}
+.cart__text{
+    color:  #464646;
+    font-size: 16px;
+    font-weight: 400;
+}
+.partners{
+    padding: 150px 0;
+}
+.partners__set{
+    padding-top: 50px;
+    gap: 25px;
+    display: flex;
+}
+.partners__img{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #04003F;
+    position: relative;
+}
+.partners__first_1{
+    width: 168px;
+    height: 42px;
+}
+.partners__first_2{
+    width: 107px;
+    height: 46px;
+}
+.partners__first_3{
+    width: 124px;
+    height: 50px;
+}
+.partners__first_4{
+    width: 108px;
+    height: 38.007px;
+}
+.partners__first_5{
+    width: 128px;
+    height: 27px;
+}
+.partners__first_6{
+    width: 70px;
+    height: 70px;
+}
+.partners__first_7{
+    width: 89px;
+    height: 62px;
+}
+.partners__first_8{
+    width: 111px;
+    height: 33px;
+}
+.partners__first_9{
+    width: 106px;
+    height: 39px;
+}
+.partners__first{
+    width: 506px;
+}
+.partners__img::after {
+    content: "Bilforhandlere";
+    position: absolute;
+    bottom: -40px; /* Регулюємо відступ тексту від лінії */
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #04003F;
+    font-size: 16px; /* Налаштуйте розмір шрифту за потребою */
+}
+.partners__second{
+    width: 551px;
+}
+.partners__second::after {
+    content: "Forsikringsselskap";
+}
+.partners__third{
+    width: 284px;
+}
+.partners__third::after {
+    content: "Bil utleie";
+}

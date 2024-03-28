@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const popup = document.querySelector('.popup');
     const popupBtn = document.querySelector('.popup__btn');
     const popupBtn2 = document.querySelector('.popup__btn_1');
-   /*  const popupBtn3 = document.querySelector('.popup__btn_2'); */
+    const popupBtn3 = document.querySelector('.popup__btn_2');
     const popupClose = document.querySelector('.popup__close');
 
     popup.addEventListener('click', function(event) {
@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         popup.classList.add('popup__open');
     });
-    /* popupBtn3.addEventListener('click', function(event) {
+    popupBtn3.addEventListener('click', function(event) {
         event.preventDefault();
         popup.classList.add('popup__open');
-    }); */
+    });
 
     popupClose.addEventListener('click', function() {
         popup.classList.remove('popup__open');
@@ -190,3 +190,100 @@ jQuery(document).ready(function() {
          btn.removeClass('show');
        }
      }); 
+
+//burger
+
+$(document).ready(function(){
+    $('.header__menu').click(function(event){
+      $('.menu').toggleClass('active__menu');
+  
+    });
+  
+  });
+  $(document).ready(function(){
+    $('.header__menu').click(function(event){
+      var menuImage = $('.burger__img');
+      
+      if (menuImage.attr('src') === 'assets/img/burger.png') {
+          menuImage.attr('src', 'assets/img/close_burger.png');
+      } else {
+          menuImage.attr('src', 'assets/img/burger.png');
+      }
+    });
+  });
+
+//burger + logo color
+  $(document).ready(function(){
+    $('.header__menu').click(function(event){
+        $('header').toggleClass('light-mode'); // добавляем/удаляем класс light-mode у header
+        
+        // Массив с id всех элементов <path>
+        var logoPaths = ['#logo-path-1', '#logo-path-2']; // Добавьте сюда id других элементов <path>, если есть
+        
+        // Проходимся по каждому id в массиве
+        logoPaths.forEach(function(id){
+            var logoPath = $(id); // Выбираем элемент <path> по его id
+            
+            var currentFill = logoPath.attr('fill'); // Получаем текущий fill цвет
+            
+            // Если текущий fill равен '#04003F', меняем его на '#fff', иначе меняем на '#04003F'
+            var newFill = (currentFill === '#04003F') ? '#fff' : '#04003F';
+            
+            // Устанавливаем новое значение fill атрибута
+            logoPath.attr('fill', newFill);
+        });
+    });
+});
+
+/* scroll */
+document.addEventListener('DOMContentLoaded', function() {
+    // Получаем все ссылки в меню
+    var menuLinks = document.querySelectorAll('.menu__item_a');
+    
+    // Обходим каждую ссылку в меню
+    menuLinks.forEach(function(link) {
+        // Добавляем обработчик события клика
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Отменяем стандартное поведение ссылки
+
+            // Получаем идентификатор целевой секции из атрибута href ссылки
+            var targetId = this.getAttribute('href');
+
+            // Получаем элемент целевой секции
+            var targetElement = document.querySelector(targetId);
+
+            // Если элемент найден
+            if (targetElement) {
+                // Выполняем плавную прокрутку к элементу
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Получаем все ссылки в подвале страницы
+    var footerLinks = document.querySelectorAll('.footer__list_text');
+    
+    // Обходим каждую ссылку в подвале страницы
+    footerLinks.forEach(function(link) {
+        // Добавляем обработчик события клика
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Отменяем стандартное поведение ссылки
+
+            // Получаем идентификатор целевой секции из атрибута href ссылки
+            var targetId = this.getAttribute('href');
+
+            // Получаем элемент целевой секции
+            var targetElement = document.querySelector(targetId);
+
+            // Если элемент найден
+            if (targetElement) {
+                // Выполняем плавную прокрутку к элементу
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});

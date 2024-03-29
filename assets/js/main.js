@@ -91,7 +91,7 @@ $(document).ready(function(){
           settings: {
             arrows: false,
             centerMode: true,
-            centerPadding: '5px',
+            centerPadding: '0',
             slidesToShow: 1
           }
           
@@ -131,6 +131,7 @@ document.querySelectorAll('.faq__wrapp').forEach(faq => {
 // Вибираємо контейнер зображень
 const sponsorshipsWrapp = document.querySelector('.sponsorships__wrapp');
 
+const cardSet = document.querySelector('.card__set');
 // Змінні для зберігання позиції миші під час початку перетягування
 let startX = 0;
 let scrollLeft = 0;
@@ -142,12 +143,23 @@ sponsorshipsWrapp.addEventListener('mousedown', (e) => {
     startX = e.pageX - sponsorshipsWrapp.offsetLeft;
     scrollLeft = sponsorshipsWrapp.scrollLeft;
 });
+cardSet.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - sponsorshipsWrapp.offsetLeft;
+    scrollLeft = sponsorshipsWrapp.scrollLeft;
+});
 
 sponsorshipsWrapp.addEventListener('mouseleave', () => {
     isDown = false;
 });
+cardSet.addEventListener('mouseleave', () => {
+    isDown = false;
+});
 
 sponsorshipsWrapp.addEventListener('mouseup', () => {
+    isDown = false;
+});
+cardSet.addEventListener('mouseup', () => {
     isDown = false;
 });
 
@@ -157,6 +169,13 @@ sponsorshipsWrapp.addEventListener('mousemove', (e) => {
     const x = e.pageX - sponsorshipsWrapp.offsetLeft;
     const walk = (x - startX) * 2; // Швидкість прокрутки можна налаштувати тут
     sponsorshipsWrapp.scrollLeft = scrollLeft - walk;
+});
+cardSet.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - cardSet.offsetLeft;
+    const walk = (x - startX) * 2; // Швидкість прокрутки можна налаштувати тут
+    cardSet.scrollLeft = scrollLeft - walk;
 });
 
 // Прокрутка колесиком
@@ -286,4 +305,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+// script.js
+gsap.to("#car", {
+  scrollTrigger: {
+      trigger: "#car",
+      start: "top center",
+      end: "bottom center",
+      scrub: true
+  },
+  y: -300
 });

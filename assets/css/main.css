@@ -21,6 +21,9 @@ h1,h2,h3,h4,h5,h6{
     line-height: 1.2em;    
     color: #04003F;
 }
+h2{
+    font-style: 30px;
+}
 img{
     display: block;
     max-width: 100%; 
@@ -77,6 +80,9 @@ ul,li{
 .menu{
     display: none;
 }
+.menu_mod{
+    display: none;
+}
 .header__menu{
     display: none;
 }
@@ -87,7 +93,7 @@ ul,li{
     position: relative;
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     overflow: hidden;
     z-index: -2;
 }
@@ -143,7 +149,7 @@ ul,li{
     color: #000;
     font-size: 35px;
     letter-spacing: 0.02em;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 }
 .text__form{
     color:  #464646;
@@ -153,15 +159,15 @@ ul,li{
 .popup__form{
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
 }
 .title__form_small{
     font-weight: 600;
     color: #000;
     font-size: 18px;
     letter-spacing: 0.02em;
-    padding-top: 25px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 .input{
     width: 100%;
@@ -176,8 +182,8 @@ ul,li{
 .input__textarea{
     max-width: 443px;
     padding: 5px 20px;
-    min-height:110px;
-    max-height:450px;
+    min-height:70px;
+    max-height:250px;
     resize: none;
 }
 .input::placeholder{
@@ -205,9 +211,9 @@ ul,li{
 }
 
 .popup__close{
-    margin-bottom: 15px;
+   
     margin-left: auto;
-    margin-right: -35px;
+    margin-right: -25px;
     cursor: pointer;
 }
 .label{
@@ -404,7 +410,7 @@ input[type="file"] {
 }
 .cart__title{
     color:  #04003F;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 500;
 }
 .cart__text{
@@ -467,6 +473,7 @@ input[type="file"] {
     width: 506px;
 }
 .partners__img::after {
+    font-weight: 500;
     content: "Bilforhandlere";
     position: absolute;
     bottom: -40px; /* Регулюємо відступ тексту від лінії */
@@ -480,12 +487,14 @@ input[type="file"] {
     width: 551px;
 }
 .partners__second::after {
+    font-weight: 500;
     content: "Forsikringsselskap";
 }
 .partners__third{
     width: 284px;
 }
 .partners__third::after {
+    font-weight: 500;
     content: "Bil utleie";
 }
 .specialization{
@@ -825,6 +834,7 @@ input[type="file"] {
 .faq__wrapp.active .faq__wrapp_img {
     top: 23px;
 }
+
 /* Tab end  */
 .sponsorships{
     padding: 20px 0;
@@ -893,6 +903,29 @@ input[type="file"] {
 }
 
 .arrow__top_text {
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 14px;
+}
+.arrow__top_mod {
+   
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.arrow__top_img_mod {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    background: #763f98;
+    border-radius: 50%;
+}
+
+.arrow__top_text_mod {
     color: rgba(255, 255, 255, 0.80);
     font-size: 14px;
 }
@@ -966,7 +999,66 @@ input[type="file"] {
 .privacy__right:hover{
     color: #00B4A4;
 }
-
+.list__first_mod{
+    color: #9B9BA9;
+}
+.list__second_mod{
+    color: #04003F;
+}
+.list__phone_mod{
+    margin-left: 145px;
+}
+.error{
+  
+    padding: 100px 0 300px;
+}
+.error__set{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   
+    gap: 25px;
+}
+.erroe__wrapp{
+    display: flex;
+    gap: 18px;
+}
+.error__title{
+    font-size: 200px;
+    font-weight: 400;
+}
+.error__text{
+    color:  #464646;
+    font-size: 18px;
+    font-weight: 400;
+  
+}
+.error__a{
+    display: flex;
+    color: #fff;
+    width: 284px;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    background:  #00B5A5;
+}
+.header__menu_mod{
+    display: none;
+}
+.specialization__mod{
+    display: none;
+}
+.sponsorships__mod{
+    display: none;
+}
+#arrow-top_mod{
+    display: none;
+}
 /*1200-1440*/
 @media screen and (max-width:1440px) {
 	.container{
@@ -1014,7 +1106,9 @@ input[type="file"] {
     .center-img{
         padding: 0 12px;
     }
-    
+    .error{
+        padding: 100px 0 200px;
+    }
     
     
 }
@@ -1107,6 +1201,9 @@ input[type="file"] {
     .info__img{
         display: none;
     }
+    .list__phone_mod{
+        margin-left: 45px;
+    }
 }	
 
 /*576-767*/
@@ -1129,6 +1226,13 @@ input[type="file"] {
         width: 35px;
         height: 35px;
     }
+    .header__menu_mod{
+        display: flex;
+    }
+    .burger__img_mod{
+        width: 35px;
+        height: 35px;
+    }
     .menu{
         position: absolute;
         z-index: 999;
@@ -1136,7 +1240,19 @@ input[type="file"] {
         right: 0;
         width: 100%;
         height: auto;
-        background: #fff;
+        background: rgba(255, 255, 255, 0.90);
+        
+        display: none;
+        
+    }
+    .menu__mod{
+        position: absolute;
+        z-index: 999;
+        top: 114px;
+        right: 0;
+        width: 100%;
+        height: auto;
+        background: rgba(255, 255, 255, 0.90);
         
         display: none;
         
@@ -1144,7 +1260,14 @@ input[type="file"] {
     .menu:hover{
         background: #f1f1f1;
     }
+    .menu__mod:hover{
+        background: #f1f1f1;
+    }
     .active__menu{
+        display: block;
+        justify-content: center;
+    }
+    .active__menu_mod{
         display: block;
         justify-content: center;
     }
@@ -1160,6 +1283,11 @@ input[type="file"] {
         color: #04003F;
         padding: 15px 0;
         width: 100%;
+    }
+    .menu__item_a:hover{
+        
+        color: #00B4A4;
+       
     }
     /*  Burger end */
 
@@ -1179,7 +1307,7 @@ input[type="file"] {
     }
     .card__img_1{
         width: 333px;
-        height: 250px;
+        height: 380px;
     }
     .card__img_2{
         width: 333px;
@@ -1187,7 +1315,7 @@ input[type="file"] {
     }
     .card__img_3{
         width: 333px;
-        height: 250px;
+        height: 300px;
     }
     .partners{
         padding: 50px 0;
@@ -1227,6 +1355,7 @@ input[type="file"] {
         border-bottom: 1px solid rgba(4, 0, 63, 0);
     }
     .partners__img::before {
+        font-weight: 500;
         content: "Bilforhandlere";
         position: absolute;
         top: -40px; /* Регулюємо відступ тексту від лінії */
@@ -1234,6 +1363,39 @@ input[type="file"] {
         right: 0;
         color: rgba(4, 0, 63, 0.70);
         font-size: 16px; /* Налаштуйте розмір шрифту за потребою */
+    }
+    .video__first{
+        height: 100vh;
+    }
+    .who{
+        margin-top: -250px;
+    }
+    .who__title {
+        color: #fff;
+    }
+    .who_mix{
+        padding-top: 100px;
+    }
+    .who__wrapp{
+        display: flex;
+        gap: 25px;
+        flex-direction: column-reverse;
+    }
+    .who_mix_left::before {
+        width: 65px; 
+        height: 142px;
+    }
+    .info__text{
+        width: 100%;
+    }
+    .sponsorships__text{
+        margin-right: 15px;
+    }
+    #arrow-top{
+        display: none;
+    }
+    #arrow-top_mod{
+        display: block;
     }
 }
 /*458-575*/
@@ -1247,7 +1409,7 @@ input[type="file"] {
         width: 100%;
     }
     .who_mix_left::before {
-        width: 65px;  
+        width: 85px; 
     }
     .who_kit_left{
         height: 300px;
@@ -1318,6 +1480,7 @@ input[type="file"] {
         width: 100%;
     }
     
+    
 }
 /*375-457*/
 @media screen and (max-width:457px){
@@ -1371,7 +1534,9 @@ input[type="file"] {
         padding: 0 10px;
        
     }
-   
+    .sponsorships__text{
+        width: 85%;
+    }
     
 }
 /*320-374*/
@@ -1418,5 +1583,6 @@ input[type="file"] {
         padding: 0 5px;
        
     }
+    
 }
 

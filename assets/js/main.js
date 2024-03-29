@@ -210,50 +210,29 @@ jQuery(document).ready(function() {
        }
      }); 
 
-//burger
-
-$(document).ready(function(){
-    $('.header__menu').click(function(event){
-      $('.menu').toggleClass('active__menu');
-  
+     jQuery(document).ready(function() {
+      var btn = $('#arrow-top_mod');  
+      $(window).scroll(function() {     
+        if ($(window).scrollTop() > 500) {
+           btn.addClass('show');
+         } else {
+           btn.removeClass('show');
+         }
+       });
+       btn.on('click', function(e) {
+         e.preventDefault();
+         $('html, body').animate({scrollTop:0}, '500');
+       });
     });
-  
-  });
-  $(document).ready(function(){
-    $('.header__menu').click(function(event){
-      var menuImage = $('.burger__img');
-      
-      if (menuImage.attr('src') === 'assets/img/burger.png') {
-          menuImage.attr('src', 'assets/img/close_burger.png');
-      } else {
-          menuImage.attr('src', 'assets/img/burger.png');
-      }
-    });
-  });
-
-//burger + logo color
-  $(document).ready(function(){
-    $('.header__menu').click(function(event){
-        $('header').toggleClass('light-mode'); // добавляем/удаляем класс light-mode у header
-        
-        // Массив с id всех элементов <path>
-        var logoPaths = ['#logo-path-1', '#logo-path-2']; // Добавьте сюда id других элементов <path>, если есть
-        
-        // Проходимся по каждому id в массиве
-        logoPaths.forEach(function(id){
-            var logoPath = $(id); // Выбираем элемент <path> по его id
-            
-            var currentFill = logoPath.attr('fill'); // Получаем текущий fill цвет
-            
-            // Если текущий fill равен '#04003F', меняем его на '#fff', иначе меняем на '#04003F'
-            var newFill = (currentFill === '#04003F') ? '#fff' : '#04003F';
-            
-            // Устанавливаем новое значение fill атрибута
-            logoPath.attr('fill', newFill);
-        });
-    });
-});
-
+    var btn = $('#arrow-top');
+       $(window).scroll(function() {
+         if ($(window).scrollTop() > 500) {
+           btn.addClass('show');
+         } else {
+           btn.removeClass('show');
+         }
+       }); 
+       
 /* scroll */
 document.addEventListener('DOMContentLoaded', function() {
     // Получаем все ссылки в меню
@@ -306,13 +285,68 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-// script.js
-gsap.to("#car", {
-  scrollTrigger: {
-      trigger: "#car",
-      start: "top center",
-      end: "bottom center",
-      scrub: true
-  },
-  y: -300
+
+
+
+//burger
+
+$(document).ready(function(){
+  $('.header__menu').click(function(event){
+    $('.menu').toggleClass('active__menu');
+
+  });
+
 });
+$(document).ready(function(){
+  $('.header__menu').click(function(event){
+    var menuImage = $('.burger__img');
+    
+    if (menuImage.attr('src') === 'assets/img/burger.png') {
+        menuImage.attr('src', 'assets/img/close_burger.png');
+    } else {
+        menuImage.attr('src', 'assets/img/burger.png');
+    }
+  });
+});
+$(document).ready(function(){
+  $('.header__menu_mod').click(function(event){
+    $('.menu__mod').toggleClass('active__menu_mod');
+
+  });
+
+});
+$(document).ready(function(){
+  $('.header__menu_mod').click(function(event){
+    var menuImage = $('.burger__img_mod');
+    
+    if (menuImage.attr('src') === 'assets/img/burger__black.png') {
+        menuImage.attr('src', 'assets/img/close_burger.png');
+    } else {
+        menuImage.attr('src', 'assets/img/burger__black.png');
+    }
+  });
+});
+
+//burger + logo color
+$(document).ready(function(){
+  $('.header__menu').click(function(event){
+      $('header').toggleClass('light-mode'); 
+      
+     
+      var logoPaths = ['#logo-path-1', '#logo-path-2']; 
+      
+      
+      logoPaths.forEach(function(id){
+          var logoPath = $(id); 
+          
+          var currentFill = logoPath.attr('fill'); 
+          
+          
+          var newFill = (currentFill === '#04003F') ? '#fff' : '#04003F';
+          
+          
+          logoPath.attr('fill', newFill);
+      });
+  });
+});
+
